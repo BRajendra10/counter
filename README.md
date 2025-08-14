@@ -1,12 +1,133 @@
-# React + Vite
+📌 Counter App — React + Redux + Tailwind CSS
+📝 Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This Counter App is a simple yet powerful example of managing application state using Redux in a React environment, styled with Tailwind CSS for a modern, responsive UI.
+It demonstrates how to use Redux for centralized state management, enabling predictable state transitions and easy debugging.
 
-Currently, two official plugins are available:
+The app provides three main buttons:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+➕ Increment (+) — Increases the counter by 1.
 
-## Expanding the ESLint configuration
+➖ Decrement (-) — Decreases the counter by 1.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🔄 Reset — Resets the counter back to 0.
+
+🎯 Features
+
+Global State Management with Redux.
+
+Functional Components with React Hooks.
+
+Tailwind CSS Styling for sleek and responsive design.
+
+Three Core Actions: Increment, Decrement, Reset.
+
+Clean, beginner-friendly code structure for learning and extension.
+
+🛠️ Tech Stack
+
+React — Component-based UI library.
+
+Redux — State management library.
+
+React-Redux — Official bindings between React and Redux.
+
+Tailwind CSS — Utility-first CSS framework for styling.
+
+📂 Folder Structure
+counter-app/
+│
+├── src/
+│   ├── app/
+│   │   └── store.js           # Redux store configuration
+│   │
+│   ├── features/
+│   │   └── counter/
+│   │       ├── counterSlice.js # Redux slice with state & reducers
+│   │
+│   ├── components/
+│   │   └── Counter.js         # Main Counter component with UI
+│   │
+│   ├── App.js                 # Root component
+│   ├── index.js               # App entry point
+│   └── index.css              # Tailwind base styles
+│
+├── package.json
+└── README.md
+
+🚀 Installation & Setup
+1️⃣ Clone the repository
+git clone https://github.com/yourusername/counter-app-redux.git
+cd counter-app-redux
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Install Tailwind CSS
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+
+Update tailwind.config.js:
+
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+Add Tailwind to index.css:
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+4️⃣ Run the application
+npm start
+
+🖥️ How It Works
+
+The Redux store is created in store.js and provided to the entire app using <Provider>.
+
+counterSlice.js defines:
+
+Initial state (count: 0)
+
+Reducers for increment, decrement, and reset actions.
+
+Counter.js:
+
+Uses useSelector to read the current counter value.
+
+Uses useDispatch to trigger actions.
+
+Tailwind classes style the buttons and layout for a clean, responsive interface.
+
+🎨 Example UI
+------------------------
+|     Counter: 0       |
+|                      |
+|  [+]  [-]  [Reset]   |
+------------------------
+
+
++ Button: Adds 1 to the counter.
+
+- Button: Subtracts 1 from the counter.
+
+Reset Button: Sets the counter to 0.
+
+📸 Screenshots
+
+(Add your screenshots here)
+
+📜 License
+
+This project is licensed under the MIT License — feel free to modify and use for learning or personal projects.
+
+📺 Demo Video
+
+🔗 Click here to watch the demo
